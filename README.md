@@ -1,8 +1,8 @@
 # sales_inventory_management_system
 
-1) install requirements.txt
-2) run initial.py once after cloning repo
-3) run sales_inventory.py to use app 
+1) install requirements.txt (pip install -r requirements.txt)
+3) run initial.py once after cloning repo
+4) run sales_inventory.py to use app 
 
 
 --------------------------------------------------------------------------------
