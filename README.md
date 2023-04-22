@@ -16,7 +16,6 @@ sample_data to use in app:
 
 username - admin
 password - admin       #for admin privelages like add delete modify data
-
 username - user
 password - user        #for customer privelages
 -----------------------------------------------------------------------------
