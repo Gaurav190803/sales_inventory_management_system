@@ -1,6 +1,7 @@
 # sales_inventory_management_system
 
 1) install requirements.txt (pip install -r requirements.txt)
+2) update sql_password with your sql password in initial.py and sales_inventory.py  
 3) run initial.py once after cloning repo
 4) run sales_inventory.py to use app 
 
