@@ -6,15 +6,19 @@
 
 
 --------------------------------------------------------------------------------
+
 initial.py sets up sql database, tables and sample_data to use in tkinter app
+
 -------------------------------------------------------------------------------
+
 database name - sales_inventory
 table names - user_detail,inventory
-----------------------------------------------------------------------------
-sample_data to use in app:
 
-username - admin,password - admin       #for admin privelages like add delete modify data
-username - user,password - user        #for customer privelages
+----------------------------------------------------------------------------
+# sample_data to use in app:
+
+1)username - admin,password - admin       for admin privelages like add delete modify data
+2)username - user,password - user        for customer privelages
 -----------------------------------------------------------------------------
 
 
