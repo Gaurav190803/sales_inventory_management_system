@@ -8,7 +8,6 @@
 --------------------------------------------------------------------------------
 initial.py sets up sql database, tables and sample_data to use in tkinter app
 -------------------------------------------------------------------------------
-
 database name - sales_inventory
 table names - user_detail,inventory
 ----------------------------------------------------------------------------
