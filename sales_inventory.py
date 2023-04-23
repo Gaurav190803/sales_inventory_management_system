@@ -4,7 +4,8 @@ import time
 from tkinter import messagebox
 
 sql_password = "g"
-
+mydb = con.connect(host = "localhost", user = "root",password = sql_password)
+cursor = mydb.cursor()
 
 class tkinterApp(tk.Tk):
 	
@@ -42,7 +43,7 @@ class tkinterApp(tk.Tk):
 	# to display the current frame passed as
 	# parameter
     def show_frame(self, cont):
-            for F in (LoginPage,signUp,sales_inventory_admin,sales_inventory,addItem,updatePrice,deleteItem,view_tables_admin,view_tables):
+            for F in (LoginPage,addItem,updatePrice,view_tables_admin,view_tables):
                 frame = F(self.container, self)
                 self.frames[F] = frame
                 frame.grid(row = 0, column = 0, sticky ="nsew")   
@@ -54,8 +55,8 @@ class tkinterApp(tk.Tk):
 class sales_inventory_admin(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
@@ -83,8 +84,8 @@ class sales_inventory_admin(tk.Frame):
 class addItem(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
@@ -109,12 +110,12 @@ class addItem(tk.Frame):
         self.productStock_entry = tk.Entry(self)
         self.productStock_entry.pack(side=tk.TOP)
 
-        self.productMfd_label = tk.Label(self, text="Manufacture date:")
+        self.productMfd_label = tk.Label(self, text="Manufacture date(YYYY-MM-DD):")
         self.productMfd_label.pack(side=tk.TOP)
         self.productMfd_entry = tk.Entry(self)
         self.productMfd_entry.pack(side=tk.TOP)
 
-        self.productExd_label = tk.Label(self, text="Expiry date:")
+        self.productExd_label = tk.Label(self, text="Expiry date(YYYY-MM-DD):")
         self.productExd_label.pack(side=tk.TOP)
         self.productExd_entry = tk.Entry(self)
         self.productExd_entry.pack(side=tk.TOP)
@@ -161,8 +162,8 @@ class addItem(tk.Frame):
 class updatePrice(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
@@ -290,8 +291,8 @@ class updatePrice(tk.Frame):
 class deleteItem(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
@@ -321,8 +322,8 @@ class deleteItem(tk.Frame):
 class sales_inventory(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
@@ -340,8 +341,8 @@ class sales_inventory(tk.Frame):
 class LoginPage(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
@@ -398,8 +399,8 @@ class LoginPage(tk.Frame):
 class signUp(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
@@ -456,8 +457,8 @@ class signUp(tk.Frame):
 class view_tables(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
@@ -492,8 +493,8 @@ class view_tables(tk.Frame):
 class view_tables_admin(tk.Frame):
     def __init__(self, master,controller):
         super().__init__(master)
-        self.mydb = con.connect(host = "localhost", user = "root",password = sql_password)
-        self.cursor = self.mydb.cursor()
+        self.mydb = mydb
+        self.cursor = cursor
         self.master = master
         self.cursor.execute("use sales_inventory;")
         self.create_widgets()
