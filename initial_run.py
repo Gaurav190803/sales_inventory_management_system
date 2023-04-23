@@ -7,6 +7,7 @@ cursor = mydb.cursor()
 
 try:
     cursor.execute("create database sales_inventory;")
+    print("Database created successfully!")
 except:
     pass
 
@@ -17,6 +18,7 @@ except:
 
 try:
     cursor.execute("create table user_detail(name varchar(50),phone_num varchar(10),username varchar(20),password varchar(20));")
+    print("user_detail table created successfully")
 except:
     pass
 
@@ -28,6 +30,7 @@ except:
 
 try:
     cursor.execute("create table inventory(product_id int,product_name varchar(30),product_stock int,mfg_date date,exp_date date,price int);")
+    print("inventory table created successfully")
 except:
     pass
 
@@ -36,4 +39,10 @@ try:
 except:
     pass
 
+
+print("-------------------------------")
+print("run sales_inventory.py")
+print("username - admin or user")
+print("password - admin or user")
+print("-------------------------------")
 mydb.commit();
